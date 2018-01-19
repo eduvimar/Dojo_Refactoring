@@ -1,9 +1,15 @@
 package com.gildedrose;
 
-public class TexttestFixture {
-    public static void main(String[] args) {
-        System.out.println("OMGHAI!");
+import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
+
+public class TexttestFixture {
+    @Test
+    public void allFlowTest() {
+        //Given
+        int daysTest = 1;
         Item[] items = new Item[] {
                 new Item("+5 Dexterity Vest", 10, 20), //
                 new Item("Aged Brie", 2, 0), //
@@ -17,21 +23,23 @@ public class TexttestFixture {
                 new Item("Conjured Mana Cake", 3, 6) };
 
         GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        //Expected
+        Item[] itemsExpected = new Item[] {
+                new Item("+5 Dexterity Vest", 9, 19), //
+                new Item("Aged Brie", 1, 1), //
+                new Item("Elixir of the Mongoose", 4, 6), //
+                new Item("Sulfuras, Hand of Ragnaros", 0, 80), //
+                new Item("Sulfuras, Hand of Ragnaros", -1, 80),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 14, 21),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 9, 50),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 4, 50),
+                // this conjured item does not work properly yet
+                new Item("Conjured Mana Cake", 2, 5) };
 
-        int days = 2;
-        if (args.length > 0) {
-            days = Integer.parseInt(args[0]) + 1;
-        }
-
-        for (int i = 0; i < days; i++) {
-            System.out.println("-------- day " + i + " --------");
-            System.out.println("name, sellIn, quality");
-            for (Item item : items) {
-                System.out.println(item);
+            for (int arr = 0; arr< items.length ; arr++) {
+                assertEquals(itemsExpected[arr].toString().trim(),items[arr].toString().trim());
             }
-            System.out.println();
-            app.updateQuality();
-        }
-    }
 
+    }
 }
