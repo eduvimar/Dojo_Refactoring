@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import com.gildedrose.items.AgedBrie;
+import com.gildedrose.items.Backstage;
 import com.gildedrose.items.Sulfuras;
 import org.junit.Test;
 
@@ -8,17 +10,17 @@ import static org.junit.Assert.assertEquals;
 
 public class TexttestFixture {
     @Test
-    public void allFlowTest() throws SulfurasExcedMaxException {
+    public void allFlowTest() {
         //Given
         Item[] items = new Item[] {
                 new Item("+5 Dexterity Vest", 10, 20), //
-                new Item("Aged Brie", 2, 0), //
+                new AgedBrie("", 2, 0), //
                 new Item("Elixir of the Mongoose", 5, 7), //
                 new Sulfuras("Hand of Ragnaros", 0, 80), //
                 new Sulfuras("Hand of Ragnaros", -1, 80),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+                new Backstage("passes to a TAFKAL80ETC concert", 15, 20),
+                new Backstage("passes to a TAFKAL80ETC concert", 10, 49),
+                new Backstage("passes to a TAFKAL80ETC concert", 5, 49),
                 // this conjured item does not work properly yet
                 new Item("Conjured Mana Cake", 3, 6) };
 
@@ -46,17 +48,17 @@ public class TexttestFixture {
     }
 
     @Test
-    public void allFlow11DaysTest() throws SulfurasExcedMaxException {
+    public void allFlow11DaysTest() {
         //Given
         Item[] items = new Item[] {
                 new Item("+5 Dexterity Vest", 10, 20), //
-                new Item("Aged Brie", 2, 0), //
+                new AgedBrie("Aged Brie", 2, 0), //
                 new Item("Elixir of the Mongoose", 5, 7), //
                 new Sulfuras("Hand of Ragnaros", 0, 80), //
                 new Sulfuras("Hand of Ragnaros", -1, 80),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+                new Backstage("passes to a TAFKAL80ETC concert", 15, 20),
+                new Backstage("passes to a TAFKAL80ETC concert", 10, 49),
+                new Backstage("passes to a TAFKAL80ETC concert", 5, 49),
                 // this conjured item does not work properly yet
                 new Item("Conjured Mana Cake", 3, 6) };
 
