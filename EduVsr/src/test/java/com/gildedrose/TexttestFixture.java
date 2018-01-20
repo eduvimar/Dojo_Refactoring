@@ -69,7 +69,7 @@ public class TexttestFixture {
         //Expected
         Item[] itemsExpected = new Item[] {
                 new Item("+5 Dexterity Vest", -1, 8), //
-                new Item("Aged Brie", -9, 20), //
+                new Item("Aged Brie", -9, 0), //
                 new Item("Elixir of the Mongoose", -6, 0), //
                 new Item("Sulfuras, Hand of Ragnaros", 0, 80), //
                 new Item("Sulfuras, Hand of Ragnaros", -1, 80),

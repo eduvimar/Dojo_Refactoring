@@ -12,7 +12,12 @@ class GildedRose {
     }
 
     public void updateQuality() {
+
         for (int i = 0; i < items.length; i++) {
+            if(items[i] instanceof AgedBrie){
+                ((AgedBrie)items[i]).dailyUpdate();
+                continue;
+            }
             if (!(items[i] instanceof AgedBrie)
                     && !(items[i] instanceof Backstage)) {
                 if (items[i].quality > 0) {
