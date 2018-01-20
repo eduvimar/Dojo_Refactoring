@@ -1,19 +1,21 @@
 package com.gildedrose;
 
+import com.gildedrose.items.Stockable;
+import com.gildedrose.items.WrappedStockable;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class ItemTest {
+public class StockableTest {
 
     @Test
     public void decrease2AfterSellInPastTest() {
         //Given day past
-        Item[] givenItems = new Item[]{new Item("General Item", 0, 5)};
+        Stockable[] givenItems = new Stockable[]{new WrappedStockable("General Stockable", 0, 5)};
         //action
         GildedRose app = new GildedRose(givenItems);
         app.updateQuality();
         //Expected
-        Item[] expectedItems = new Item[]{new Item("General Item", -1, 3)};
+        Stockable[] expectedItems = new Stockable[]{new WrappedStockable("General Stockable", -1, 3)};
 
         assertEquals(givenItems[0].toString().trim(),expectedItems[0].toString().trim());
     }
@@ -21,13 +23,12 @@ public class ItemTest {
     @Test
     public void decrease1NormalTest(){
         //Given day past
-        Item[] givenItems = new Item[]{new Item("General Item", 1, 5)};
+        Stockable[] givenItems = new Stockable[]{new WrappedStockable("General Stockable", 1, 5)};
         //action
         GildedRose app = new GildedRose(givenItems);
         app.updateQuality();
         //Expected
-        Item[] expectedItems = new Item[]{new Item("General Item", 0, 4)};
-
+        WrappedStockable[] expectedItems = new WrappedStockable[]{new WrappedStockable("General Stockable", 0, 4)};
         assertEquals(givenItems[0].toString().trim(),expectedItems[0].toString().trim());
     }
 }
