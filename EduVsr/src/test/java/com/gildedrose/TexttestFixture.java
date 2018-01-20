@@ -34,8 +34,8 @@ public class TexttestFixture {
                 new Item("Sulfuras, Hand of Ragnaros", 0, 80), //
                 new Item("Sulfuras, Hand of Ragnaros", -1, 80),
                 new Item("Backstage passes to a TAFKAL80ETC concert", 14, 21),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 9, 50),
-                new Item("Backstage passes to a TAFKAL80ETC concert", 4, 50),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 9, 51),
+                new Item("Backstage passes to a TAFKAL80ETC concert", 4, 52),
                 // this conjured item does not work properly yet
                 new Item("Conjured Mana Cake", 2, 5) };
 

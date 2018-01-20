@@ -17,6 +17,9 @@ class GildedRose {
             if(items[i] instanceof AgedBrie){
                 ((AgedBrie)items[i]).dailyUpdate();
                 continue;
+            }else if (items[i] instanceof Backstage) {
+                ((Backstage) items[i]).dailyUpdate();
+                continue;
             }
             if (!(items[i] instanceof AgedBrie)
                     && !(items[i] instanceof Backstage)) {
