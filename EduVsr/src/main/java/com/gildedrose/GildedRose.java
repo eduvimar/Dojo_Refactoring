@@ -16,8 +16,4 @@ class GildedRose {
         }
     }
 
-    public Item decrementarSellInSulfuras(Item item) {
-        item.sellIn = item.sellIn - 1 ;
-        return item;
-    }
 }
